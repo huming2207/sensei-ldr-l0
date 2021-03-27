@@ -25,8 +25,8 @@ set(CMAKE_C_STANDARD 99)
 
 
 
-add_executable(cyberxray-l0x1-ldr main.c)
-target_link_libraries(cyberxray-l0x1-ldr
+add_executable(sensei-ldr-l0 main.c loader.c loader.h)
+target_link_libraries(sensei-ldr-l0
         HAL::STM32::L0::LL_RCC
         HAL::STM32::L0::LL_GPIO
         HAL::STM32::L0::LL_UTILS

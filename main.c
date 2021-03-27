@@ -4,7 +4,7 @@
 #include <stm32l0xx_ll_rcc.h>
 #include <stm32l0xx_ll_utils.h>
 
-__attribute__(( long_call, section(".data") )) static void increase_clk_speed()
+static void increase_clk_speed()
 {
     LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_SYSCFG);
     LL_APB1_GRP1_EnableClock(LL_APB1_GRP1_PERIPH_PWR);

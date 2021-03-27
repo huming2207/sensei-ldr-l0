@@ -10,8 +10,8 @@ set(STM32_L0_TYPE_MATCH
 )
 set(STM32_L0_RAM_SIZES 
      2K  8K  8K 20K  2K  2K  8K  8K
-     8K  8K  8K  8K  8K  8K 20K 20K
-    20K 20K 20K 20K
+     8K  8K  8K  8K  8K  8K  4K  4K # L07x and L08x set to use 4KB RAM only - rest of them are taken by debugger
+     4K  4K  4K  4K
 )
 set(STM32_L0_CCRAM_SIZES 
      0K  0K  0K  0K  0K  0K  0K  0K
@@ -40,5 +40,5 @@ endif()
 
 
 target_link_options(STM32::L0 INTERFACE 
-    -mcpu=cortex-m0plus --specs=nano.specs
+    -mcpu=cortex-m0plus --specs=nano.specs -ffunction-sections -fdata-sections -flto -fmessage-length=0
 )
